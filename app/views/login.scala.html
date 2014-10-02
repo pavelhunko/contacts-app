@@ -1,0 +1,31 @@
+@(loginForm: play.data.Form[Application.Login])
+
+<html>
+    <head>
+        <title>Contact list</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+    </head>
+    <body>
+        <header>
+            <a href="@routes.Application.index" id="logo"><span>Contact</span>list</a>
+        </header>
+    	@helper.form(routes.Application.authenticate) {
+   		<h1>Sign in</h1>
+   		@if(loginForm.hasGlobalErrors) {
+    		<p class="error">
+        			@loginForm.globalError.message
+    		</p>
+		}
+
+   		<p>
+       		<input type="email" name="email" placeholder="Email" value="@loginForm("email").value">
+   		</p>
+   		<p>
+       		<input type="password" name="password" placeholder="Password">
+   		</p>
+   		<p>
+	       <button type="submit">Login</button>
+   		</p>
+		}
+    </body>
+</html>
