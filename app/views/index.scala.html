@@ -1,7 +1,28 @@
-@(message: String)
+@import models._
+@(contacts: List[model.Contact]) 
+@main("contacts list") {
 
-@main("Welcome to Play") {
+<header>
+	<hgroup>
+		<h1>Contacts list</h1>
+		<h2>All contacts</h2>
+	</hgroup>
+</header>
 
-    <h1>@message</h1>
+<article class="contacts">
+	<ul class="list">
+		
+		@for(contact <- contacts) {
+		<dt>
+			<h4>@contact.id</h4>
+			<h4>@contact.name</h4>  
+			 
+			</a>
+		</dt>
 
+		}
+	</ul>
+	</div>
+
+</article>
 }

@@ -1,7 +1,10 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import play.db.ebean.Model;
 
@@ -11,6 +14,9 @@ public class User extends Model {
 	public Long id;
 	public String email;
 	public String password;
+	
+	@OneToMany(mappedBy="user")
+	public List<Contact> contacts;
 	
 
 	public User(Long _id, String _email, String _pass) {
