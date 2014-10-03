@@ -4,28 +4,34 @@
     <head>
         <title>Contact list</title>
         <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+		<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+		<script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
+		<!-- bootstrap.js -->
+		<script src="@routes.Assets.at("javascripts/bootstrap.js")" type="text/javascript"></script>
     </head>
     <body>
         <header>
             <a href="@routes.Application.index" id="logo"><span>Contact</span>list</a>
         </header>
     	@helper.form(routes.Application.authenticate) {
-   		<h1>Sign in</h1>
+   		<div class="centre"><h1>Log in</h1></div>
    		@if(loginForm.hasGlobalErrors) {
     		<p class="error">
-        			@loginForm.globalError.message
-    		</p>
-		}
+@loginForm.globalError.message
+</p>
+}
 
-   		<p>
-       		<input type="email" name="email" placeholder="Email" value="@loginForm("email").value">
-   		</p>
-   		<p>
-       		<input type="password" name="password" placeholder="Password">
-   		</p>
-   		<p>
-	       <button type="submit">Login</button>
-   		</p>
-		}
-    </body>
+<p>
+<input type="email" name="email" placeholder="Email" value="@loginForm("email").value" >
+</p>
+<p>
+<input type="password" name="password" placeholder="Password">
+</p>
+<p>
+<button type="submit">Login</button>
+</p>
+
+}
+</body>
 </html>

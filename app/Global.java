@@ -12,7 +12,7 @@ import controllers.Application;
 public class Global extends GlobalSettings {
     public void onStart(Application app) {
         // Check if the database is empty
-        if (User.find.findRowCount() == 0) {
+        //if (User.find.findRowCount() == 0) {
         	User user1 = new User((long)11, "11@em.com", "secret");
         	user1.save();
         	
@@ -48,6 +48,6 @@ public class Global extends GlobalSettings {
         	contact4.name = "third";
         	contact4.user = user2;
             contact4.save();
-        }
+       // }
     }
 }
